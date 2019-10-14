@@ -1,0 +1,23 @@
+.btn-email {
+	background-color:transparent;
+	padding: 0;
+    border: none;
+    background: none;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+    font-family:Arial;
+    padding-left: 10px;
+	font-size: 1rem;
+	text-decoration:none;
+}
+.btn-email:hover {
+	background-color:transparent;
+}
+.btn-email:active {
+	position:relative;
+	top:1px;
+}
+.btn-email:focus{
+    outline: none;
+}
