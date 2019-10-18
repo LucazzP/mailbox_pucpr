@@ -1,4 +1,4 @@
-.btn-email {
+.btn-email{
 	background-color:transparent;
 	padding: 0;
     border: none;
@@ -20,4 +20,18 @@
 }
 .btn-email:focus{
     outline: none;
+}
+
+.btn:hover {
+	cursor: pointer;
+	border: 2px solid #8a8a8a;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.btn:active {
+	position:relative;
+	top:1px;
 }
