@@ -9,25 +9,31 @@ $dom->preserveWhiteSpace = false;
 $dom->formatOutput = true;
 
 #criando o nó principal (root)
-$root = $dom->createElement("tabelaUsuarios");
+$root = $dom->createElement("tabelaEmails");
 
-#nó filho (usuario)
-$usuario = $dom->createElement("usuario");
+#nó filho (email)
+$email = $dom->createElement("email");
 
 #setanto emails e atributos dos elementos xml (nós)
-$email = $dom->createElement("email", "renanteste@gmail.com.br");
-$senha = $dom->createElement("senha", "12345");
+$de = $dom->createElement("de", "luquinhaspolazito@gmail.com.br");
+$para = $dom->createElement("para", "renanteste@gmail.com.br");
+$cc = $dom->createElement("cc", "renancc@gmail.com.br");
+$assunto = $dom->createElement("assunto", "testerenan");
+$texto = $dom->createElement("texto", " assunto bla blah blahbanbenasiubnranbrfndaobif");
 
-#adiciona os nós (informacaoes do usuario) em usuario
-$usuario->appendChild($email);
-$usuario->appendChild($senha);
+#adiciona os nós (informacaoes do email) em email
+$email->appendChild($de);
+$email->appendChild($para);
+$email->appendChild($cc);
+$email->appendChild($assunto);
+$email->appendChild($texto);
 
-#adiciona o nó usuario em (root) tabelaUsuarios
-$root->appendChild($usuario);
+#adiciona o nó email em (root) tabelaEmails
+$root->appendChild($email);
 $dom->appendChild($root);
 
 # Para salvar o arquivo, descomente a linha
-$dom->save("usuarios.xml");
+$dom->save("emails.xml");
 
 #cabeçalho da página
 header("Content-Type: text/xml");
