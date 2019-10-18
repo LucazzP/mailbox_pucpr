@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<tabelaUsuarios>
+  <usuario>
+    <email>renanteste@gmail.com.br</email>
+    <senha>12345</senha>
+  </usuario>
+  <usuario>
+    <email>lucas@lucas.com.br</email>
+    <senha>789456</senha>
+  </usuario>
+  <usuario>
+    <email>pedrinho@lucas.com.br</email>
+    <senha>666666</senha>
+  </usuario>
+<usuario><email>samito@lucas.com.br</email><senha>666666</senha></usuario></tabelaUsuarios>

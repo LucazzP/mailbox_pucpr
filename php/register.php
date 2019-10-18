@@ -1,34 +1,21 @@
 <?php
-function addusuario($document, $email, $senha)
-{
- #criar usuario
- $usuario = $document->createElement("usuario");
-
- #criar nó email
- $email = $document->createElement("email", $email);
-
- #senha
- $senha = $document->createElement("telesenha", $senha);
-
-
- $usuario->appendChild($email);
- $usuario->appendChild($senha);
- return $usuario;
-}
-
 $dom = new DOMDocument("1.0", "ISO-8859-1");
+$dom->load("usuarios.xml");
+#retirar os espacos em branco
 $dom->preserveWhiteSpace = false;
-$dom->formatOutput = true;
 
-$root = $dom->createElement("tabelaUsuarios");
+$root = $dom->getElementsByTagName("tabelaUsuarios")-> item(0);
 
-#utilizando a funcao para criar usuarios
-$lucas = addusuario($dom, "lucas@lucas.com.br", "456123");
-$pedro = addusuario($dom, "pedro@pedro.com.br", "321654");
+
+$usuario = $dom->createElement("usuario");
+    #criando novo user
+    $email = $dom->createElement("email", "samito@lucas.com.br");
+    $senha = $dom->createElement("senha", "666666");
 
 #adicionando no root
-$root->appendChild($Tiao);
-$root->appendChild($Joao);
+$usuario->appendChild($email);
+$usuario->appendChild($senha);
+$root->appendChild($usuario);
 $dom->appendChild($root);
 
 #salvando o arquivo
