@@ -4,17 +4,20 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "../php/login.php",
+            url: "/mailbox_pucpr/php/login.php",
             data: {
                 email: $("#email").val(),
                 senha: $("#password").val()
             },
             success: function(resposta) {
                 if (resposta) {
+                    alert("Usuario Logado com sucesso!")
                     window.location.pathname = '/mail';
                 }
             },
-            error: function(xhr, ajaxOptions, thrownError) {}
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert("Usuario ou senha incorretos, por favro cadastre-se")
+            }
         });
     });
 });
