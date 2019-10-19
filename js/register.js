@@ -19,8 +19,9 @@ $(document).ready(function(){
                         senha: senha2
                     },
                     function (data, textStatus, jqXHR) {
-                        alert(data);
+                        // alert(data);
                         alert("Usuario cadastrado com sucesso");
+                        $(location).attr('href', '../index.html')
                     },
                 )
             }else{
