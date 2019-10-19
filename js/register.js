@@ -9,7 +9,7 @@ $(document).ready(function(){
         function testeEmail(email) {
             var RegExp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
             return RegExp.test(email);
-        }
+        };
         if(testeEmail(email)){
             if(senha == senha2){
                 $.post(
@@ -19,7 +19,7 @@ $(document).ready(function(){
                         senha: senha2
                     },
                     function (data, textStatus, jqXHR) {
-                        // alert(data);
+                        alert(data);
                         alert("Usuario cadastrado com sucesso");
                         $(location).attr('href', '../index.html')
                     },
@@ -29,7 +29,7 @@ $(document).ready(function(){
             }
         }else{
             alert("Email não valido, digite novamente");
-        }
+        };
         
-    })
+    });
 });
