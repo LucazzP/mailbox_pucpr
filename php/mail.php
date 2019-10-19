@@ -1,24 +1,29 @@
 <?php
-    $json = $_POST;
+   $json = $_POST;
 
-    $xml = new DOMDocument('1.0');
+   $dom = new DOMDocument("1.0", "ISO-8859-1");
+   $dom->load("../xml/emails.xml");
+   #retirar os espacos em branco
+   $dom->preserveWhiteSpace = false;
 
-    $xml_email = $xml->createElement("email");
+   $root = $dom->getElementsByTagName("tabelaEmails")-> item(0);
 
-    $xml_email->setAttribute("id", 0);
-    $xml_email->setAttribute("de", $json['de']);
-    $xml_email->setAttribute("para", $json['para']);
-    
-    $xml_child = $xml->createElement("cc", $json['cc']);
-    $xml_email->appendChild($xml_child);
+   $email = $dom->createElement("email");
 
-    $xml_child = $xml->createElement("assunto", $json['assunto']);
-    $xml_email->appendChild($xml_child);
+   $email->setAttribute("id", 0);
+   $email->setAttribute("de", $json['de']);
+   $email->setAttribute("para", $json['para']);
+   
+   $root = $dom->createElement("cc", $json['cc']);
+   $email->appendChild($root);
 
-    $xml_child = $xml->createElement("texto", $json['texto']);
-    $xml_email->appendChild($xml_child);
+   $root = $dom->createElement("assunto", $json['assunto']);
+   $email->appendChild($root);
 
-    $xml->appendChild($xml_email);
+   $root = $dom->createElement("texto", $json['texto']);
+   $email->appendChild($root);
 
-    $xml->save("save.xml");
+   $dom->appendChild($root);
+
+   $dom->save("../xml/emails.xml");
 ?>
