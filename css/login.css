@@ -1,68 +1,87 @@
 .login {
-  background: #f1f7fc;
-  padding: 80px 0;
+   background: #f1f7fc;
+   padding: 80px 0;
 }
 
 .login form {
-  max-width: 320px;
-  width: 90%;
-  margin: 0 auto;
-  background-color: #ffffff;
-  padding: 40px;
-  border-radius: 4px;
-  color: #505e6c;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+   max-width: 400px;
+   width: 90%;
+   margin: 0 auto;
+   background-color: #ffffff;
+   padding: 40px;
+   border-radius: 4px;
+   color: #505e6c;
+   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 .login .icone {
-  text-align: center;
-  padding: 0 0 20px;
-  font-size: 100px;
-  color: rgb(244,71,107);
+   text-align: center;
+   padding: 0 0 20px;
+   font-size: 100px;
+}
+
+.login .icone .material-icons {
+   font-size: 80pt;
+   color: #3690c4;
+   transition: 0.5s all ease;
+}
+
+.login .icone .material-icons:hover {
+   font-size: 85pt;
 }
 
 .login form .form-control {
-  background: #f7f9fc;
-  border: none;
-  border-bottom: 1px solid #dfe7f1;
-  border-radius: 0;
-  box-shadow: none;
-  outline: none;
-  color: inherit;
-  text-indent: 8px;
-  height: 42px;
+   background: #f7f9fc;
+   border: none;
+   border-bottom: 1px solid #dfe7f1;
+   border-radius: 15px 0px;
+   box-shadow: none;
+   outline: none;
+   color: inherit;
+   text-indent: 8px;
+   height: 42px;
+   transition: .3s;
+}
+
+.login form .form-control:focus,
+.login form .form-control:hover {
+   border-radius: 15px 0px;
+   border-bottom: 2px solid #3690c4;
 }
 
 .login form .btn-primary {
-  background: #f4476b;
-  border: none;
-  border-radius: 4px;
-  padding: 11px;
-  box-shadow: none;
-  margin-top: 26px;
-  text-shadow: none;
-  outline: none !important;
+   background-color: #3690C4;
+   border-radius: 15px 0px;
+   padding: 11px;
+   box-shadow: none;
+   margin-top: 26px;
+   text-shadow: none;
+   outline: none !important;
+   transition: .5s;
 }
 
-.login form .btn-primary:hover, .login form .btn-primary:active {
-  background: #eb3b60;
+.login form .btn-primary:hover,
+.login form .btn-primary:active {
+   border: 1px solid #3690c4;
+   box-shadow: 0 0 20px rgba(33, 33, 33, .2);
 }
 
 .login form .btn-primary:active {
-  transform: translateY(1px);
+   transform: translateY(1px);
 }
 
 .login form .forgot {
-  display: block;
-  text-align: center;
-  font-size: 12px;
-  color: #6f7a85;
-  opacity: 0.9;
-  text-decoration: none;
+   display: block;
+   text-align: center;
+   font-size: 12px;
+   color: #6f7a85;
+   opacity: 0.5;
+   text-decoration: none;
+   transition: .5s;
 }
 
-.login form .forgot:hover, .login form .forgot:active {
-  opacity: 1;
-  text-decoration: none;
+.login form .forgot:hover,
+.login form .forgot:active {
+   opacity: 1;
+   text-decoration: none;
 }
-
