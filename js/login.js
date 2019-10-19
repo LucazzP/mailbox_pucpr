@@ -1,7 +1,20 @@
 $(document).ready(function () {
    $('#btn-entrar').click(function (e) {
       e.preventDefault();
-      window.location.href = './mailbox_pucpr/mail/index.html';
+      $.ajax({
+         type: "POST",
+         dataType: "json",
+         url: "../php/login.php",
+         data: {
+            email: $("#email").val(),
+            senha: $("#password").val()
+         },
+         success:function (resposta) {
+            
+         },
+         error:function (xhr, ajaxOptions, thrownError) {
+            
+         }
+      });
    });
-   
 });
