@@ -1,29 +1,34 @@
-$(document).ready(function () {
-    $('#btn-register').click(function (e) {
-        $('#formId').submit(function(e){
-            var json = ConvertFormToJSON("#formId");
-            var Form = this;
-            alert(JSON.stringify(json));
-            alert(JSON.stringify($(Form).serialize()));
-            alert(JSON.stringify($(Form).serializeArray()));
-            alert(json);
+$(document).ready(function(){
 
-            e.preventDefault();
-        })
-
+    $("#btn-register").click(function(e){
         e.preventDefault();
-        // window.location.href = 'pages/mail.html';
-    });
-    function ConvertFormToJSON(form){
-        console.log('Convertendo form para json');
-        var array = jQuery(form).serializeArray();
-        var json = {};
-        
-        jQuery.each(array, function () {
-            json[this.nome] = this.value || '';
-        });
+        var email = $("#email").val();
+        var senha = $("#password").val();
+        var senha2 = $("#password-again").val();
 
-        console.log('JSON: '+json);
-        return json;
-    }
+        function testeEmail(email) {
+            var RegExp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return RegExp.test(email);
+        }
+        if(testeEmail(email)){
+            if(senha == senha2){
+                $.post(
+                    "http://" + window.location.host + "/mailbox_pucpr/php/register.php", 
+                    {
+                        email: email,
+                        senha: senha2
+                    },
+                    function (data, textStatus, jqXHR) {
+                        alert(data);
+                        alert("Usuario cadastrado com sucesso");
+                    },
+                )
+            }else{
+                alert("Senhas diferentes, digite novamente");
+            }
+        }else{
+            alert("Email não valido, digite novamente");
+        }
+        
+    })
 });

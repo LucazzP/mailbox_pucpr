@@ -1,6 +1,8 @@
 <?php
+    $json = $_POST;
+    
     $dom = new DOMDocument("1.0", "ISO-8859-1");
-    $dom->load("usuarios.xml");
+    $dom->load("../xml/usuarios.xml");
     #retirar os espacos em branco
     $dom->preserveWhiteSpace = false;
 
@@ -9,8 +11,8 @@
 
     $usuario = $dom->createElement("usuario");
         #criando novo user
-        $email = $dom->createElement("email", "samito@lucas.com.br");
-        $senha = $dom->createElement("senha", "666666");
+        $email = $dom->createElement("email", $json['email']);
+        $senha = $dom->createElement("senha", $json['senha']);
 
     #adicionando no root
     $usuario->appendChild($email);
@@ -19,8 +21,8 @@
     $dom->appendChild($root);
 
     #salvando o arquivo
-    $dom->save("usuarios.xml");
-
+    $dom->save("../xml/usuarios.xml");
+    
     #mostrar dados na tela
     header("Content-Type: text/xml");
     print $dom->saveXML();
