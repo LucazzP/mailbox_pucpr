@@ -1,4 +1,11 @@
 <?php
+
+   session_start(); 	//A seção deve ser iniciada em todas as páginas
+   if (!isset($_SESSION['email'])) {		//Verifica se há seções
+         session_destroy();						//Destroi a seção por segurança
+         header("Location: /index.html"); 
+         exit;	//Redireciona o visitante para login
+   }
    $json = $_POST;
 
    $dom = new DOMDocument("1.0", "ISO-8859-1");
@@ -11,7 +18,7 @@
    $email = $dom->createElement("email");
 
    $email->setAttribute("id", 0);
-   $email->setAttribute("de", $json['de']);
+   $email->setAttribute("de", $_SESSION['email']); //NAO SEI SE TA CERTO, MAS ACHO QUE TO PEGANDO O EMAIL DA SESSION
    $email->setAttribute("para", $json['para']);
    
    $root = $dom->createElement("cc", $json['cc']);

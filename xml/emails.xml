@@ -1,4 +1,2 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<tabelaEmails>
-  <email id="0" de="lucas@gmail.com" para="renan@gmail.com"><cc>pedrinho@gmail.com</cc><assunto>O lincon eh viado</assunto><texto>eh mesmo</texto></email>
-</tabelaEmails>
+<texto>eh mesmo</texto>

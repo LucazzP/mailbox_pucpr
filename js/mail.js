@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    
     $('#btn-new-email').click(function(e) {
         e.preventDefault();
         $.post(
