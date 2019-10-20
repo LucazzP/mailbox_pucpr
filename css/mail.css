@@ -1,0 +1,140 @@
+body {
+   color: #000;
+   height: 100%;
+   min-height: 100%;
+}
+
+.main-menu {
+   background-color: #3690C4;
+}
+
+.menu {
+   color: #fff;
+}
+
+.search {
+   width: 242px;
+   height: 34px;
+   padding: 10px;
+}
+
+.corpo {
+   width: 100%;
+   height: 100%;
+   min-width: 100%;
+   padding: 0;
+}
+
+.corpo .row {
+   width: 100%;
+   height: 100%;
+   margin: 0;
+}
+
+.sidebar {
+   background-color: #F3F3F3;
+   min-height: auto;
+   padding: 0;
+}
+
+.sidebar .nova-mensagem {
+   width: 100%;
+   background-color: #F3F3F3;
+   color: #000;
+   min-width: 100%;
+}
+
+.sidebar ul {
+   width: 100%;
+}
+
+.sidebar ul .strong {
+   background-color: #CFECF4;
+}
+
+.sidebar ul .light {
+   background-color: #E0F1F8;
+}
+
+.emails {
+   padding: 0;
+   min-height: auto;
+}
+
+.emails h4 {
+   min-width: 100%;
+   width: 100%;
+   padding: 6px 0px 6px 20px;
+   background-color: #F3F3F3;
+}
+
+
+
+
+
+
+
+
+.btn-email {
+   background-color: transparent;
+   padding: 0;
+   border: none;
+   background: none;
+   display: inline-block;
+   cursor: pointer;
+   color: #000000;
+   font-family: Arial;
+   padding-left: 10px;
+   font-size: 1rem;
+   text-decoration: none;
+}
+
+.btn-email:hover {
+   background-color: transparent;
+}
+
+.btn-email:active {
+   position: relative;
+   top: 1px;
+}
+
+.btn-email:focus {
+   outline: none;
+}
+
+.mail {}
+
+.mail i {
+   font-size: 25px;
+   padding-right: 15px;
+   color: #3690C4;
+}
+
+.mail .e-mail {
+   font-weight: bold;
+   padding-right: 15px;
+}
+
+.mail .assunto {
+   font-weight: bold;
+   padding-right: 15px;
+}
+
+.mail .preview {
+   font-weight: normal;
+   padding-right: 0;
+}
+
+.mail:hover {
+   cursor: pointer;
+   border: 2px solid #8a8a8a;
+}
+
+.mail:focus {
+   outline: none;
+}
+
+.mail:active {
+   position: relative;
+   top: 1px;
+}
