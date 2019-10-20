@@ -12,12 +12,13 @@ $(document).ready(function () {
          success: function (resposta) {
             if (resposta) {
                alert("Usuário Logado com sucesso!")
-               window.location.pathname = '/mail';
+               window.location.pathname = '/mailbox_pucpr/mail/index.html';
             }
          },
          error: function (xhr, ajaxOptions, thrownError) {
             alert("Usuário ou senha incorretos, digite novamente.");
          }
       });
+      return false;
    });
 });
