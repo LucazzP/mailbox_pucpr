@@ -26,14 +26,16 @@
 <body>
    <nav class="navbar navbar-light navbar-expand-md main-menu">
       <div class="container-fluid">
-         <i class="material-icons menu mr-3">menu</i>
+         <button class="menu mr-3" id="menu-toggle">
+            <i class="material-icons">menu</i>
+         </button>
          <input class="border rounded pulse animated search" type="search" placeholder="Pesquisar" autocomplete="on">
          <div class="collapse navbar-collapse" id="navcol-1"></div>
       </div>
    </nav>
-   <div class="container corpo">
+   <div class="container corpo toggled" id="wrapper">
       <div class="row">
-         <div class="col-2 sidebar">
+         <div class="col-2 sidebar" id="sidebar-wrapper">
             <button class="btn btn-primary nova-mensagem" id="btn-new-email" type="button">+ Nova Mensagem</button>
             <ul class="list-group">
                <li class="list-group-item strong">
@@ -66,7 +68,7 @@
                </li>
             </ul>
          </div>
-         <div class="col-10 emails">
+         <div class="col-10 emails" id="page-content-wrapper">
             <h4>Caixa de Entrada</h4>
             <ul class="list-group">
                <li class="mail list-group-item text-left d-xl-flex justify-content-xl-start align-items-xl-center">

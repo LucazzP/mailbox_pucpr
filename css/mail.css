@@ -9,7 +9,13 @@ body {
 }
 
 .menu {
+   background: none;
+   border: none;
+}
+
+.menu i {
    color: #fff;
+   vertical-align: middle;
 }
 
 .search {
@@ -56,6 +62,54 @@ body {
    background-color: #E0F1F8;
 }
 
+/* Bootstrap menu toggle */
+
+#wrapper {
+   padding-left: 0;
+   -webkit-transition: all 0.5s ease;
+   -moz-transition: all 0.5s ease;
+   -o-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+   padding-left: 221.5px;
+}
+
+#sidebar-wrapper {
+   z-index: 1000;
+   position: fixed;
+   left: 221.5px;
+   width: 0;
+   height: 100%;
+   margin-left: -221.5px;
+   overflow-y: auto;
+   -webkit-transition: all 0.5s ease;
+   -moz-transition: all 0.5s ease;
+   -o-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+   width: 221.5px;
+}
+
+#page-content-wrapper {
+   width: 100%;
+   position: absolute;
+   -webkit-transition: all 0.5s ease;
+   -moz-transition: all 0.5s ease;
+   -o-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+}
+
+#wrapper.toggled #page-content-wrapper {
+   position: absolute;
+   margin-right: -221.5px;
+}
+
+/* End - Bootstrap menu toggle */
+
 .emails {
    padding: 0;
    min-height: auto;
@@ -67,13 +121,6 @@ body {
    padding: 6px 0px 6px 20px;
    background-color: #F3F3F3;
 }
-
-
-
-
-
-
-
 
 .btn-email {
    background-color: transparent;
