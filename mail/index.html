@@ -24,9 +24,44 @@
 </head>
 
 <body>
+
+   <!-- Modal -->
+   <div class="modal fade" id="NovaMensagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="TituloModalCentralizado">Novo E-mail</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <div class="inputs">
+                  <div class="form-group">
+                     <input class="form-control" type="email" id="para" name="para" placeholder="Para">
+                  </div>
+                  <div class="form-group">
+                     <input class="form-control" type="text" id="assunto" name="assunto" placeholder="Assunto">
+                  </div>
+                  <div class="form-group">
+                     <textarea class="form-control" name="mensagem" id="mensagem" placeholder="Mensagem"
+                        rows="10"></textarea>
+                  </div>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+               <button type="button" id="enviar" class="btn btn-primary">Enviar e-mail</button>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
    <nav class="navbar navbar-light navbar-expand-md main-menu">
       <div class="container-fluid">
-         <button class="menu mr-5" id="menu-toggle">
+         <button class="menu animated pulse mr-5" id="menu-toggle">
             <i class="material-icons">menu</i>
          </button>
          <input class="search" type="search" placeholder="Pesquisar" autocomplete="on">
@@ -37,7 +72,8 @@
       <div class="row">
          <div class="col-2 sidebar" id="sidebar-wrapper">
             <div class="sidebar-nova-mensagem">
-               <button class="nova-mensagem" id="btn-new-email" type="button">+ Nova Mensagem</button>
+               <button class="nova-mensagem" id="btn-new-email" data-toggle="modal" data-target="#NovaMensagem">+ Nova
+                  Mensagem</button>
             </div>
             <ul class="list-group">
                <li class="list-group-item strong">
