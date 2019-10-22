@@ -7,7 +7,7 @@
          exit;	//Redireciona o visitante para login
    }
    $json = $_POST;
-
+   
    $dom = new DOMDocument("1.0", "ISO-8859-1");
    $dom->load("../xml/emails.xml");
    #retirar os espacos em branco
@@ -15,22 +15,29 @@
 
    $root = $dom->getElementsByTagName("tabelaEmails")-> item(0);
 
-   $email = $dom->createElement("email");
 
-   $email->setAttribute("id", 0);
-   $email->setAttribute("de", $_SESSION['email']); //NAO SEI SE TA CERTO, MAS ACHO QUE TO PEGANDO O EMAIL DA SESSION
-   $email->setAttribute("para", $json['para']);
-   
-   $root = $dom->createElement("cc", $json['cc']);
-   $email->appendChild($root);
+   $usuario = $dom->createElement("email");
+      #criando novo user
+      $de = $dom->createElement("de", $_SESSION['email']);
+      $para = $dom->createElement("para", $json['para']);
+      $cc = $dom->createElement("cc", $json['cc']);
+      $assunto = $dom->createElement("assunto", $json['assunto']);
+      $texto = $dom->createElement("texto", $json['texto']);
 
-   $root = $dom->createElement("assunto", $json['assunto']);
-   $email->appendChild($root);
-
-   $root = $dom->createElement("texto", $json['texto']);
-   $email->appendChild($root);
-
+   #adicionando no root
+   $usuario->appendChild($de);
+   $usuario->appendChild($para);
+   $usuario->appendChild($cc);
+   $usuario->appendChild($assunto);
+   $usuario->appendChild($texto);
+   $root->appendChild($usuario);
    $dom->appendChild($root);
 
+   #salvando o arquivo
    $dom->save("../xml/emails.xml");
+   
+   #mostrar dados na tela
+   header("Content-Type: text/xml");
+   print $dom->saveXML();
+
 ?>
