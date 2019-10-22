@@ -10,12 +10,11 @@
 
    foreach($dom->children() as $usuario){
       if($usuario->email == $json['email'] && $usuario->senha == $json['senha']){
-         echo true;
          if(!isset($_SESSION)) 	//verifica se há sessão aberta
          session_start();		//Inicia seção
          //Abrindo seções
          $_SESSION['email']=$json['email'];	
-         exit;
+         echo true;
       }else{
          echo false;
       }
