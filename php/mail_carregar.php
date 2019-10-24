@@ -9,15 +9,16 @@
    $json = $_POST;
 
    $dom = new DOMDocument("1.0", "ISO-8859-1");
-   $dom = simplexml_load_file("../xml/emails.xml") or die("Error: Objeto inexistente!");
+//    $dom = simplexml_load_file("../xml/emails.xml") or die("Error: Objeto inexistente!");
    #retirar os espacos em branco
    $dom->preserveWhiteSpace = false;
+   $dados = array();
+   $dom = simplexml_load_string("../xml/emails.xml");
 
    foreach($dom->children() as $email){
       if($email->para == $_SESSION['email']){
             $dados = $email;
       }
       echo json_encode($dados);
-      
    }
 ?>

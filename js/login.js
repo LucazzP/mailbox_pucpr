@@ -4,15 +4,15 @@ $(document).ready(function () {
       $.ajax({
          type: "POST",
          dataType: "json",
-         url: "/mailbox_pucpr/php/login.php",
+         url: "/php/login.php",
          data: {
             email: $("#email").val(),
             senha: $("#password").val()
          },
          success: function (resposta) {
             if (resposta) {
-               alert("Usuário Logado com sucesso!")
-               window.location.pathname = '/mailbox_pucpr/mail/index.html';
+               console.log("Usuário Logado com sucesso!")
+               window.location.pathname = '/mail/index.html';
             }
          },
          error: function (xhr, ajaxOptions, thrownError) {

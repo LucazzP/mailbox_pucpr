@@ -13,7 +13,7 @@ $(document).ready(function () {
       if (testeEmail(email)) {
          if (senha == senha2) {
             $.post(
-               "http://" + window.location.host + "/mailbox_pucpr/php/register.php", {
+               "http://" + window.location.host + "/php/register.php", {
                   email: email,
                   senha: senha2
                },

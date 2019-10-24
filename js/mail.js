@@ -3,8 +3,7 @@ $(document).ready(function () {
    $('#caixa-entrada').click(function (e) {  
       e.preventDefault();
       $.ajax({
-         url: "/mailbox_pucpr/php/mail_carregar.php",
-         cache = false,
+         url: "/php/mail_carregar.php",
          dataType: "json",
          success: function (resposta) {
             if (resposta[0].erro) {
@@ -32,7 +31,7 @@ $(document).ready(function () {
       var assunto = $("#assunto").val();
       var mensagem = $("#mensagem").val();
       $.post(
-         "http://" + window.location.host + "/mailbox_pucpr/php/mail.php", {
+         "http://" + window.location.host + "/php/mail.php", {
             para: para,
             cc: cc,
             assunto: assunto,
@@ -42,7 +41,7 @@ $(document).ready(function () {
             if(data){
                alert("Email enviado com sucesso!");
                setTimeout(1000);
-               $(location).attr('href', '/mailbox_pucpr/mail/index.html')
+               $(location).attr('href', '/mail/index.html')
             }
          },
       )
