@@ -1,6 +1,7 @@
 $(document).ready(function () {
+
    // $('.modal').modal('hide');
-   $('#caixa-entrada').click(function (e) {  
+   $('#caixa-entrada').click(function (e) {
       e.preventDefault();
       $.ajax({
          url: "/php/mail_carregar.php",
@@ -41,7 +42,7 @@ $(document).ready(function () {
             texto: mensagem
          },
          function (data, textStatus, jqXHR) {
-            if(data){
+            if (data) {
                alert("Email enviado com sucesso!");
                setTimeout(1000);
                $(location).attr('href', '/mail/index.html')
@@ -55,5 +56,48 @@ $(document).ready(function () {
       $("#wrapper").toggleClass("toggled");
       $("#page-content-wrapper").toggleClass("col-12");
    });
+
+   $("#favoritos").click(function (e) {
+      e.preventDefault();
+      $("#caixa").html("Favoritos");
+
+   });
+
+   $("#caixa-entrada").click(function (e) {
+      e.preventDefault();
+      $("#caixa").html("Caixa de Entrada");
+
+   });
+
+   $("#lixo").click(function (e) {
+      e.preventDefault();
+      $("#caixa").html("Lixo Eletrônico");
+
+   });
+
+   $("#rascunho").click(function (e) {
+      e.preventDefault();
+      $("#caixa").html("Rascunho");
+
+   });
+
+   $("#enviados").click(function (e) {
+      e.preventDefault();
+      $("#caixa").html("Itens Enviados");
+
+   });
+
+   $("#excluidos").click(function (e) {
+      e.preventDefault();
+      $("#caixa").html("Itens Excluidos");
+
+   });
+
+   $("#morto").click(function (e) {
+      e.preventDefault();
+      $("#caixa").html("Arquivo Morto");
+
+   });
+
 
 });

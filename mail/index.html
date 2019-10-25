@@ -26,8 +26,7 @@
 <body>
 
    <!-- Modal -->
-   <div class="modal fade" id="NovaMensagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-      aria-hidden="true">
+   <div class="modal fade" id="NovaMensagem" tabindex="-1" role="dialog" aria-labelledby="Nova Mensagem" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
          <div class="modal-content">
             <div class="modal-header">
@@ -48,8 +47,7 @@
                      <input class="form-control" type="text" id="assunto" name="assunto" placeholder="Assunto">
                   </div>
                   <div class="form-group">
-                     <textarea class="form-control" name="mensagem" id="mensagem" placeholder="Mensagem"
-                        rows="10"></textarea>
+                     <textarea class="form-control" name="mensagem" id="mensagem" placeholder="Mensagem" rows="10"></textarea>
                   </div>
                </div>
             </div>
@@ -69,49 +67,53 @@
          </button>
          <input class="search" type="search" placeholder="Pesquisar" autocomplete="on">
          <div class="collapse navbar-collapse" id="navcol-1"></div>
+         <a href="/" id="sair" class="sair">
+            <i class="fas fa-sign-out-alt"></i>
+         </a>
       </div>
    </nav>
    <div class="container corpo toggled" id="wrapper">
       <div class="row">
-         <div class="col-2 sidebar" id="sidebar-wrapper">
+         <div class="col-2 sidebar overflow-hidden" id="sidebar-wrapper">
             <div class="sidebar-nova-mensagem">
                <button class="nova-mensagem" id="btn-new-email" data-toggle="modal" data-target="#NovaMensagem">+ Nova
-                  Mensagem</button>
+                  Mensagem
+               </button>
             </div>
             <ul class="list-group">
-               <li class="list-group-item strong">
+               <button id="favoritos" class="pastas-btn light">
                   <i class="fa fa-star-o"></i>
-                  <button class="btn-email">Favoritos</button>
-               </li>
-               <li class="list-group-item light">
+                  <span class="pastas">Favoritos</span>
+               </button>
+               <button id="caixa-entrada" class="pastas-btn strong">
                   <i class="fa fa-envelope-o"></i>
-                  <button class="btn-email" id="caixa-entrada">Caixa de Entrada</button>
-               </li>
-               <li class="list-group-item strong">
+                  <span class="pastas">Caixa de Entrada</span>
+               </button>
+               <button id="lixo" class="pastas-btn light">
                   <i class="fa fa-exclamation-circle"></i>
-                  <button class="btn-email">Lixo Eletrônico</button>
-               </li>
-               <li class="list-group-item light">
+                  <span class="pastas">Lixo Eletrônico</span>
+               </button>
+               <button id="rascunho" class="pastas-btn strong">
                   <i class="fa fa-pencil-square-o"></i>
-                  <button class="btn-email">Rascunho</button>
-               </li>
-               <li class="list-group-item strong">
+                  <span class="pastas">Rascunho</span>
+               </button>
+               <button id="enviados" class="pastas-btn light">
                   <i class="fa fa-paper-plane-o"></i>
-                  <button class="btn-email">Itens Enviados</button>
-               </li>
-               <li class="list-group-item light">
+                  <span class="pastas">Itens Enviados</span>
+               </button>
+               <button id="excluidos" class="pastas-btn strong">
                   <i class="fa fa-trash-o"></i>
-                  <button class="btn-email">Itens Excluidos</button>
-               </li>
-               <li class="list-group-item strong">
+                  <span class="pastas">Itens Excluidos</span>
+               </button>
+               <button id="morto" class="pastas-btn light">
                   <i class="fa fa-archive"></i>
-                  <button class="btn-email">Arquivo Morto</button>
-               </li>
+                  <span class="pastas">Arquivo Morto</span>
+               </button>
             </ul>
          </div>
          <div class="col-10 emails" id="page-content-wrapper">
             <div class="title">
-               <h4>Caixa de Entrada</h4>
+               <h4 id="caixa">Caixa de Entrada</h4>
             </div>
             <ul class="list-group" id="inbox">
                <li class="mail list-group-item text-left d-xl-flex justify-content-xl-start align-items-xl-center">
@@ -120,7 +122,8 @@
                   <span class="assunto text-nowrap">Assunto: Sobre</span>
                   <span class="preview text-nowrap text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing
                      elit. Etiam vehicula, tortor non suscipit ultricies, massa lorem malesuada mi, at maximus nulla
-                     risus ac nisi. Praesent tristique lacus eros, egestas dignissim lacus efficitur eget.<br></span>
+                     risus ac nisi. Praesent tristique lacus eros, egestas dignissim lacus efficitur eget.
+                  </span>
                </li>
             </ul>
          </div>
