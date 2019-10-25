@@ -1,5 +1,8 @@
 $(document).ready(function () {
-
+   $("#sair").click(function(e){
+      e.preventDefault();
+      "http://" + window.location.host + "/php/sair.php"
+   })
    // $('.modal').modal('hide');
    $('#caixa-entrada').click(function (e) {
       e.preventDefault();
