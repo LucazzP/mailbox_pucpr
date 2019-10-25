@@ -21,4 +21,4 @@
     <assunto>testerenan</assunto>
     <texto> ha</texto>
   </email>
-</tabelaEmails>
+<email><de>pedro@gmail.com</de><para>pedro@gmail.com</para><cc/><assunto>Pedro</assunto><texto>pedro</texto></email></tabelaEmails>
