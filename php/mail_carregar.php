@@ -13,12 +13,12 @@
    #retirar os espacos em branco
    $dom->preserveWhiteSpace = false;
    $dados = array();
-   $dom = simplexml_load_string("../xml/emails.xml");
+   $dom = simplexml_load_file("../xml/emails.xml");
 
    foreach($dom->children() as $email){
       if($email->para == $_SESSION['email']){
-            $dados = $email;
+         array_push($dados, json_encode($email));
       }
-      echo json_encode($dados);
    }
+   echo json_encode($dados);
 ?>

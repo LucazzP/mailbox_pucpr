@@ -9,14 +9,17 @@ $(document).ready(function () {
             if (resposta[0].erro) {
                $("h2").html(resposta[0].erro);
             }else{
-               for(var i = 0; i<resposta.length; i++){
-                  itens += "<li>";
-                  itens += "<span>" + resposta[i].de + "</span>";
-                  itens += "<span>" + resposta[i].assunto + "</span>";
-                  itens += "<span>" + resposta[i].texto + "</span>";
+               var itens = '';
+               for(var i = 0; i < resposta.length; i++){
+                  var response = JSON.parse(resposta[i]);
+                  itens += "<li class='mail list-group-item text-left d-xl-flex justify-content-xl-start align-items-xl-center'>";
+                  itens += "<i class='far fa-user-circle'></i>"
+                  itens += "<span class='e-mail'>" + response['de'] + "</span>";
+                  itens += "<span class='assunto text-nowrap'>" + 'Assunto: ' + response['assunto'] + "</span>";
+                  itens += "<span class='preview text-nowrap text-truncate'>" + response['texto'] + "</span>";
                   itens += "</li>";
                }
-               $("#minha-lista tbody").html(itens);
+               $("#inbox").html(itens);
             }
          },
          error: function (xhr, ajaxOptions, thrownError) {
