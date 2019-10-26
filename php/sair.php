@@ -1,5 +1,18 @@
 <?php
-    session_destroy();						//Destroi a seção por segurança
-    header("Location: /index.html"); 
-    exit;	//Redireciona o visitante para login
+   $json = $_POST;
+
+   if (!isset($_SESSION['email'])) {		
+      session_destroy();						
+      // header("Location: /index.html");
+      echo TRUE; 
+      // exit;
+   }
+   if($json['sair']){
+      session_destroy();						
+      // header("Location: /index.html");
+      echo TRUE; 
+      // exit;
+   }
+   
+
 ?>
