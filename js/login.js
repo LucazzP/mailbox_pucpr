@@ -6,19 +6,19 @@ $(document).ready(function () {
          dataType: "json",
          url: "/php/login.php",
          data: {
-            email: $("#email").val(),
-            senha: $("#password").val()
+             email: $("#email").val(),
+             senha: $("#password").val()
          },
-         success: function (resposta) {
-            if (resposta) {
-               console.log("Usuário Logado com sucesso!")
-               window.location.pathname = '/mail/index.html';
-            }
+         success: function(resposta) {
+             if (resposta) {
+                 alert("Usuario Logado com sucesso!")
+                 window.location.pathname = '/mail';
+             }
          },
-         error: function (xhr, ajaxOptions, thrownError) {
-            alert("Usuário ou senha incorretos, digite novamente.");
+         error: function(xhr, ajaxOptions, thrownError) {
+            alert("Usuario ou senha incorretos, por favro cadastre-se")
          }
-      });
+     });
       return false;
    });
 });
