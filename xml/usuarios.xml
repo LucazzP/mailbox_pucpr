@@ -3,9 +3,6 @@
    <usuario>
       <email>renanteste@gmail.com.br</email>
       <senha>12345</senha>
-      <configs>
-         <excluidos>1,2,3</excluidos>
-         <arquivados>3</arquivados>
-      </configs>
+      <excluidos>1,2,3</excluidos>
    </usuario>
-<usuario><email>renanteste@gmail.com.br</email><senha>123456</senha></usuario><usuario><email>renanenviar@gmail.com.br</email><senha>456123</senha></usuario><usuario><email>renantesteenvio@gmail.com.br</email><senha>123456</senha></usuario><usuario><email>lucashpolazzo2013@gmail.com</email><senha>123456</senha></usuario><usuario><email>renizoo@gmail.com</email><senha>123456</senha></usuario><usuario><email>pedro@gmail.com</email><senha>123456</senha></usuario><usuario><email>renanteste@gmail.com.br</email><senha>123456</senha></usuario><usuario><email>teste2@gmail.com</email><senha>12345</senha></usuario><usuario><email>renantestes@gmail.com</email><senha>1234</senha></usuario></tabelaUsuarios>
+<usuario><email>renanenviar@gmail.com.br</email><senha>456123</senha></usuario><usuario><email>renantesteenvio@gmail.com.br</email><senha>123456</senha></usuario><usuario><email>lucashpolazzo2013@gmail.com</email><senha>123456</senha></usuario><usuario><email>renizoo@gmail.com</email><senha>123456</senha></usuario><usuario><email>pedro@gmail.com</email><senha>123456</senha></usuario><usuario><email>teste2@gmail.com</email><senha>12345</senha></usuario><usuario><email>renantestes@gmail.com</email><senha>1234</senha></usuario><usuario><email>asdasd@gmail.com</email><senha>123456</senha></usuario><usuario><email>qwe@gmail.com</email><senha>123456</senha></usuario></tabelaUsuarios>

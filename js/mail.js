@@ -1,4 +1,4 @@
-function loadEmails () {
+function loadEmails() {
     $.ajax({
         url: "/php/mail_carregar.php",
         dataType: "json",
@@ -36,7 +36,7 @@ $(document).ready(function() {
                 success: function(response) { //response is value returned from php (for your example it's "bye bye"
                     window.location.pathname = 'index.html';
                 },
-                error: function(xhr, ajaxOptions, thrownError){
+                error: function(xhr, ajaxOptions, thrownError) {
                     window.location.pathname = 'index.html';
                 }
             });

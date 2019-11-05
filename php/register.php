@@ -8,11 +8,11 @@
 
    $root = $dom->getElementsByTagName("tabelaUsuarios")-> item(0);
 
-
    $usuario = $dom->createElement("usuario");
-      #criando novo user
-      $email = $dom->createElement("email", $json['email']);
-      $senha = $dom->createElement("senha", $json['senha']);
+   
+   #criando novo user
+   $email = $dom->createElement("email", $json['email']);
+   $senha = $dom->createElement("senha", $json['senha']);
 
    #adicionando no root
    $usuario->appendChild($email);

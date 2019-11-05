@@ -18,9 +18,21 @@ $(document).ready(function () {
                   senha: senha2
                },
                function (data, textStatus, jqXHR) {
-                  alert(data);
-                  alert("Usuário cadastrado com sucesso!");
-                  $(location).attr('href', '../index.html')
+                  //Login
+                  $.ajax({
+                     type: "POST",
+                     dataType: "json",
+                     url: "/php/login.php",
+                     data: {
+                         email: email,
+                         senha: senha
+                     },
+                     success: function(resposta) {
+                         if (resposta) {
+                             window.location.pathname = '/mail';
+                         }
+                     },
+                 });
                },
             )
          } else {
