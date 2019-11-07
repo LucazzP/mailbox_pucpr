@@ -90,7 +90,22 @@ $(document).ready(function() {
     $("#lixo").click(function(e) {
         e.preventDefault();
         $("#caixa").html("Lixo Eletrônico");
-
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "/php/exclude.php",
+            data: {
+                emailToFavorite: $("#email").val(),
+            },
+            success: function(resposta) {
+                // if (resposta) {
+                // alert(resposta);
+                // }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                // alert(thrownError)
+            }
+        });
     });
 
     $("#rascunho").click(function(e) {

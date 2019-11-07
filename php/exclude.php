@@ -9,7 +9,8 @@
 
    $json = $_POST;
 
-   // $emailToExclude = $json['emailToExclude'];
+//    $emailToExclude = $json['emailToExclude'];
+    $emailToExclude = 1;
 //    $email = $_SESSION['email'];
    $email = 'renanteste@gmail.com.br';
 
@@ -20,14 +21,12 @@
    $userXml = $xml->xpath('/tabelaUsuarios/usuario[email="' . $email . '"][1]');
 
    if(isset($userXml[0]->excluidos)){
-      echo 'ata';
+      $userXml[0]->excluidos = $userXml[0]->excluidos . ',2';
    } else {
-      // $exclude = $dom->createElement('excluidos', $emailToExclude);
-      // $userXml = 
-      echo print_r($userXml);
+      $userXml[0]->addChild('excluidos', $emailToExclude);
    }
 
-   // $xml->asXML("../xml/usuarios.xml");
+   $xml->asXML("../xml/usuarios.xml");
 
 //    $usuario = $dom->createElement("usuario");
    

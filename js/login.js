@@ -1,22 +1,6 @@
 $(document).ready(function() {
     $('#btn-entrar').click(function(e) {
         e.preventDefault();
-        // $.ajax({
-        //     type: "POST",
-        //     dataType: "json",
-        //     url: "/php/exclude.php",
-        //     data: {
-        //         emailToFavorite: $("#email").val(),
-        //     },
-        //     success: function(resposta) {
-        //         // if (resposta) {
-        //         // alert(resposta);
-        //         // }
-        //     },
-        //     error: function(xhr, ajaxOptions, thrownError) {
-        //         // alert(thrownError)
-        //     }
-        // });
         $.ajax({
             type: "POST",
             dataType: "json",
