@@ -9,10 +9,8 @@
 
    $json = $_POST;
 
-//    $emailToExclude = $json['emailToExclude'];
-    $emailToExclude = 1;
-//    $email = $_SESSION['email'];
-   $email = 'renanteste@gmail.com.br';
+   $emailToExclude = $json['emailToExclude'];
+   $email = $_SESSION['email'];
 
    $xml = simplexml_load_file('../xml/usuarios.xml');
 
@@ -21,29 +19,12 @@
    $userXml = $xml->xpath('/tabelaUsuarios/usuario[email="' . $email . '"][1]');
 
    if(isset($userXml[0]->excluidos)){
-      $userXml[0]->excluidos = $userXml[0]->excluidos . ',2';
+      $userXml[0]->excluidos = $userXml[0]->excluidos . ',' . $emailToExclude;
    } else {
       $userXml[0]->addChild('excluidos', $emailToExclude);
    }
 
    $xml->asXML("../xml/usuarios.xml");
 
-//    $usuario = $dom->createElement("usuario");
-   
-//    #criando novo user
-//    $email = $dom->createElement("email", $json['email']);
-//    $senha = $dom->createElement("senha", $json['senha']);
-
-//    #adicionando no root
-//    $usuario->appendChild($email);
-//    $usuario->appendChild($senha);
-//    $root->appendChild($usuario);
-//    $dom->appendChild($root);
-
-//    #salvando o arquivo
-//    $dom->save("../xml/usuarios.xml");
-   
-//    #mostrar dados na tela
-//    header("Content-Type: text/xml");
-//    $dom->saveXML();
+   echo true;
 ?>

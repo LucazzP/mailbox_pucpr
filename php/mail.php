@@ -15,14 +15,17 @@
 
    $root = $dom->getElementsByTagName("tabelaEmails")-> item(0);
 
+   $id = $root->lastChild->getAttribute('id') + 1;
 
    $usuario = $dom->createElement("email");
-      #criando novo user
-      $de = $dom->createElement("de", $_SESSION['email']);
-      $para = $dom->createElement("para", $json['para']);
-      $cc = $dom->createElement("cc", $json['cc']);
-      $assunto = $dom->createElement("assunto", $json['assunto']);
-      $texto = $dom->createElement("texto", $json['texto']);
+   $usuario->setAttribute("id", $id);
+   
+   #criando novo email
+   $de = $dom->createElement("de", $_SESSION['email']);
+   $para = $dom->createElement("para", $json['para']);
+   $cc = $dom->createElement("cc", $json['cc']);
+   $assunto = $dom->createElement("assunto", $json['assunto']);
+   $texto = $dom->createElement("texto", $json['texto']);
 
    #adicionando no root
    $usuario->appendChild($de);

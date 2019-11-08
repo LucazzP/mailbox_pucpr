@@ -14,10 +14,22 @@
    $dom->preserveWhiteSpace = false;
    $dados = array();
    $dom = simplexml_load_file("../xml/emails.xml");
+   $xmlUsers = simplexml_load_file("../xml/usuarios.xml");
+   $email = $_SESSION['email'];
+
+   $userXml = $xmlUsers->xpath('/tabelaUsuarios/usuario[email="' . $email . '"][1]');
+   $excluidos = (string) $userXml[0]->excluidos;
+   $excluidos = explode(',', $excluidos);
 
    foreach($dom->children() as $email){
-      if($email->para == $_SESSION['email']){
-         array_push($dados, json_encode($email));
+      if($email->para == $_SESSION['email'] || $email->cc == $_SESSION['email']){
+         $isExcluded = false;
+         foreach($excluidos as $idExcluido){
+            if($idExcluido == $email->attributes()->{'id'}){
+               $isExcluded = true;
+            }
+         }
+         if(!$isExcluded) array_push($dados, json_encode($email));
       }
    }
    echo json_encode($dados);

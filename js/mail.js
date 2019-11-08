@@ -9,7 +9,7 @@ function loadEmails() {
                 var itens = '';
                 for (var i = 0; i < resposta.length; i++) {
                     var response = JSON.parse(resposta[i]);
-                    itens += "<li class='mail list-group-item text-left d-xl-flex justify-content-xl-start align-items-xl-center'>";
+                    itens += "<li id=" + response['@attributes']['id'] + " class='mail list-group-item text-left d-xl-flex justify-content-xl-start align-items-xl-center'>";
                     itens += "<i class='far fa-user-circle'></i>"
                     itens += "<span class='e-mail'>" + response['de'] + "</span>";
                     itens += "<span class='assunto text-nowrap'>" + 'Assunto: ' + response['assunto'] + "</span>";
@@ -21,6 +21,24 @@ function loadEmails() {
         },
         error: function(xhr, ajaxOptions, thrownError) {
             alert("Algo de errado com o xml.");
+        }
+    });
+}
+
+function excludeEmail(id) {
+    $.ajax({
+        url: "/php/exclude.php",
+        dataType: "json",
+        type: "POST",
+        data: {
+            emailToExclude: id,
+        },
+        success: function(resposta) {
+
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            console.log(thrownError);
+            alert("Não foi possível excluir o email.");
         }
     });
 }
