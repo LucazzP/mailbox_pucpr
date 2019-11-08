@@ -14,6 +14,10 @@ function loadEmails() {
                     itens += "<span class='e-mail'>" + response['de'] + "</span>";
                     itens += "<span class='assunto text-nowrap'>" + 'Assunto: ' + response['assunto'] + "</span>";
                     itens += "<span class='preview text-nowrap text-truncate'>" + response['texto'] + "</span>";
+                    itens += "<div class='flex-fill'></div>";
+                    itens += "<button type='button' id='excluirEmail' class='trash'>";
+                    itens += "<i class='fas fa-trash-alt'></i>";
+                    itens += "</button>";
                     itens += "</li>";
                 }
                 $("#inbox").html(itens);

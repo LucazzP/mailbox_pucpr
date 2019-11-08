@@ -44,7 +44,7 @@ body {
 }
 
 .sair {
-   color: #fff;
+   color: #fff !important;
    text-decoration: none;
    transition: 0.2s;
 }
@@ -228,6 +228,21 @@ body {
 .mail .preview {
    font-weight: normal;
    padding-right: 0;
+}
+
+.mail .trash {
+   background: none;
+   border: none;
+}
+
+.mail .trash i {
+   color: #000;
+   font-size: 16px;
+   transition: 0.5s;
+}
+
+.mail .trash i:hover {
+   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .mail:hover {
