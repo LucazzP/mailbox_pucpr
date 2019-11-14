@@ -47,23 +47,80 @@ function excludeEmail(id) {
     });
 }
 
+function archiveEmail(id) {
+    $.ajax({
+        url: "/php/archive.php",
+        dataType: "json",
+        type: "POST",
+        data: {
+            emailToArchive: id,
+        },
+        success: function(resposta) {
+
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            console.log(thrownError);
+            alert("Não foi possível arquivar o email.");
+        }
+    });
+}
+
+function favoriteEmail(id) {
+    $.ajax({
+        url: "/php/favorite.php",
+        dataType: "json",
+        type: "POST",
+        data: {
+            emailToFavorite: id,
+        },
+        success: function(resposta) {
+
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            console.log(thrownError);
+            alert("Não foi possível favoritar o email.");
+        }
+    });
+}
+
+function draftEmail(para, cc, assunto, mensagem) {
+    $.ajax({
+        url: "/php/draft.php",
+        dataType: "json",
+        type: "POST",
+        data: {
+            para: para,
+            cc: cc,
+            assunto: assunto,
+            texto: mensagem
+        },
+        success: function(resposta) {
+
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            console.log(thrownError);
+            alert("Não foi possível rascunhar o email.");
+        }
+    });
+}
+
 $(document).ready(function() {
     loadEmails();
     $("#sair").click(function(e) {
-            var sair = true;
-            e.preventDefault();
-            $.ajax({
-                url: '/php/sair.php',
-                type: "GET",
-                success: function(response) { //response is value returned from php (for your example it's "bye bye"
-                    window.location.pathname = 'index.html';
-                },
-                error: function(xhr, ajaxOptions, thrownError) {
-                    window.location.pathname = 'index.html';
-                }
-            });
-        })
-        // $('.modal').modal('hide');
+        var sair = true;
+        e.preventDefault();
+        $.ajax({
+            url: '/php/sair.php',
+            type: "GET",
+            success: function(response) { //response is value returned from php (for your example it's "bye bye"
+                window.location.pathname = 'index.html';
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                window.location.pathname = 'index.html';
+            }
+        });
+    })
+    $('.modal').modal('hide');
     $('#caixa-entrada').click(function(e) {
         e.preventDefault();
         loadEmails();
@@ -154,5 +211,14 @@ $(document).ready(function() {
 
     });
 
+    // Salvar rascunho
+    var para = $('#para');
+    var cc = $('#cc');
+    var assunto = $('#assunto');
+    var mensagem = $('#mensagem');
+
+    $('#ModalNovaMensagem').on('hidden.bs.modal', function() {
+        window.alert('hidden event fired!');
+    });
 
 });
