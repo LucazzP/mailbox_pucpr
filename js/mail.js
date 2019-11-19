@@ -107,8 +107,32 @@ function draftEmail(para, cc, assunto, mensagem) {
     });
 }
 
+function searchMail(txt) {
+    $.ajax({
+        url: '/php/search.php',
+        method: 'post', 
+        data:{search:txt},
+        dataType: 'text',
+        success: function (data) {
+            
+        },
+        error: function (thrownError) {
+            console.log(thrownError);
+            alert("Não foi possível buscar o email.")
+        }
+
+    })
+}
+
 $(document).ready(function() {
     loadEmails();
+    $("#search").keyup(function(){
+        var text = $(this).val();
+        if(text =! ''){
+            searchMail(text);
+        }
+    })
+
     $("#sair").click(function(e) {
         var sair = true;
         e.preventDefault();
