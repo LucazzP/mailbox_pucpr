@@ -16,10 +16,21 @@
    $dom = simplexml_load_file("../xml/emails.xml");
    $xmlUsers = simplexml_load_file("../xml/usuarios.xml");
    $email = $_SESSION['email'];
+   $request = $_json['request'];
 
    $userXml = $xmlUsers->xpath('/tabelaUsuarios/usuario[email="' . $email . '"][1]');
    $excluidos = (string) $userXml[0]->excluidos;
    $excluidos = explode(',', $excluidos);
+
+   switch ($request) {
+      case 'excluidos':
+         # code...
+         break;
+      
+      default:
+         # code...
+         break;
+   }
 
    foreach($dom->children() as $email){
       if($email->para == $_SESSION['email'] || $email->cc == $_SESSION['email']){
