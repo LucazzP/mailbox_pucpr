@@ -2,10 +2,12 @@ function loadEmails(request) {
     $.ajax({
         url: "/php/mail_carregar.php",
         data: {
-            'request': request
+            request: request == null ? " " : request
         },
+        type: "POST",
         dataType: "json",
         success: function(resposta) {
+            $("#inbox").html("");
             if (resposta[0].erro) {
                 $("h2").html(resposta[0].erro);
             } else {
@@ -18,9 +20,12 @@ function loadEmails(request) {
                     itens += "<span class='assunto text-nowrap'>" + 'Assunto: ' + response['assunto'] + "</span>";
                     itens += "<span class='preview text-nowrap text-truncate'>" + response['texto'] + "</span>";
                     itens += "<div class='flex-fill'></div>";
-                    itens += "<button type='button' onclick='excludeEmail(" + response['@attributes']['id'] + ")' class='trash'>";
-                    itens += "<i class='fas fa-trash-alt'></i>";
-                    itens += "</button>";
+                    if (request != "favoritos" && request != "excluidos") itens += "<button type='button' onclick='favoriteEmail(" + response['@attributes']['id'] + ")' class='trash'>";
+                    if (request != "favoritos" && request != "excluidos") itens += "<i class='fa fa-star'></i>";
+                    if (request != "favoritos" && request != "excluidos") itens += "</button>";
+                    if (request != "excluidos") itens += "<button type='button' onclick='excludeEmail(" + response['@attributes']['id'] + ")' class='trash'>";
+                    if (request != "excluidos") itens += "<i class='fas fa-trash-alt'></i>";
+                    if (request != "excluidos") itens += "</button>";
                     itens += "</li>";
                 }
                 $("#inbox").html(itens);
@@ -110,13 +115,13 @@ function draftEmail(para, cc, assunto, mensagem) {
 function searchMail(txt) {
     $.ajax({
         url: '/php/search.php',
-        method: 'post', 
-        data:{search:txt},
+        method: 'POST',
+        data: { search: txt },
         dataType: 'text',
-        success: function (data) {
-            
+        success: function(data) {
+
         },
-        error: function (thrownError) {
+        error: function(thrownError) {
             console.log(thrownError);
             alert("Não foi possível buscar o email.")
         }
@@ -126,9 +131,9 @@ function searchMail(txt) {
 
 $(document).ready(function() {
     loadEmails();
-    $("#search").keyup(function(){
+    $("#search").keyup(function() {
         var text = $(this).val();
-        if(text =! ''){
+        if (text = !'') {
             searchMail(text);
         }
     })
@@ -147,11 +152,14 @@ $(document).ready(function() {
             }
         });
     })
+
     $('.modal').modal('hide');
+
     $('#caixa-entrada').click(function(e) {
         e.preventDefault();
         loadEmails();
     })
+
     $('#enviar').click(function(e) {
         e.preventDefault();
         var para = $("#para").val();
@@ -184,61 +192,41 @@ $(document).ready(function() {
     $("#favoritos").click(function(e) {
         e.preventDefault();
         $("#caixa").html("Favoritos");
-
+        loadEmails("favoritos");
     });
 
     $("#caixa-entrada").click(function(e) {
         e.preventDefault();
         $("#caixa").html("Caixa de Entrada");
-
+        loadEmails();
     });
 
     $("#lixo").click(function(e) {
         e.preventDefault();
         $("#caixa").html("Lixo Eletrônico");
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: "/php/exclude.php",
-            data: {
-                emailToExclude: $("#email").val(),
-            },
-            success: function(resposta) {},
-            error: function(xhr, ajaxOptions, thrownError) {
-                alert(thrownError);
-            }
-        });
     });
 
     $("#rascunho").click(function(e) {
         e.preventDefault();
         $("#caixa").html("Rascunho");
-
+        loadEmails("rascunho");
     });
 
     $("#enviados").click(function(e) {
         e.preventDefault();
         $("#caixa").html("Itens Enviados");
-
+        loadEmails("enviados");
     });
 
     $("#excluidos").click(function(e) {
         e.preventDefault();
         $("#caixa").html("Itens Excluidos");
-
+        loadEmails("excluidos");
     });
 
     $("#morto").click(function(e) {
         e.preventDefault();
         $("#caixa").html("Arquivo Morto");
-    });
-
-    var excluir = document.getElementsByClassName("trash");
-    $('.trash').click(function(e) {
-        e.preventDefault();
-        console.log('oi');
-        var emailId = $("#");
-        excludeEmail(emailId);
     });
 
     // Salvar rascunho
