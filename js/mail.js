@@ -121,9 +121,33 @@ function searchMail(txt) {
         success: function(data) {
 
         },
-        error: function(thrownError) {
-            console.log(thrownError);
-            alert("Não foi possível buscar o email.")
+        success: function(resposta) {
+            $("#inbox").html("");
+            if (resposta[0].erro) {
+                $("h2").html(resposta[0].erro);
+            } else {
+                var itens = '';
+                for (var i = 0; i < resposta.length; i++) {
+                    var response = JSON.parse(resposta[i]);
+                    itens += "<li id=" + response['@attributes']['id'] + " class='mail list-group-item text-left d-xl-flex justify-content-xl-start align-items-xl-center'>";
+                    itens += "<i class='far fa-user-circle'></i>"
+                    itens += "<span class='e-mail'>" + response['de'] + "</span>";
+                    itens += "<span class='assunto text-nowrap'>" + 'Assunto: ' + response['assunto'] + "</span>";
+                    itens += "<span class='preview text-nowrap text-truncate'>" + response['texto'] + "</span>";
+                    itens += "<div class='flex-fill'></div>";
+                    if (request != "favoritos" && request != "excluidos") itens += "<button type='button' onclick='favoriteEmail(" + response['@attributes']['id'] + ")' class='trash'>";
+                    if (request != "favoritos" && request != "excluidos") itens += "<i class='fa fa-star'></i>";
+                    if (request != "favoritos" && request != "excluidos") itens += "</button>";
+                    if (request != "excluidos") itens += "<button type='button' onclick='excludeEmail(" + response['@attributes']['id'] + ")' class='trash'>";
+                    if (request != "excluidos") itens += "<i class='fas fa-trash-alt'></i>";
+                    if (request != "excluidos") itens += "</button>";
+                    itens += "</li>";
+                }
+                $("#inbox").html(itens);
+            }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            alert("Algo de errado com o xml.");
         }
 
     })
