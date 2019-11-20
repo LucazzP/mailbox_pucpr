@@ -3,132 +3,135 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <title>Mailbox - PUCPR</title>
+  <title>Mailbox - PUCPR</title>
 
-    <!-- Lib -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="../fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="../fonts/ionicons.min.css">
-    <link rel="stylesheet" href="../fonts/material-icons.min.css">
-    <link rel="stylesheet" href="../fonts/fontawesome5-overrides.min.css">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../image/favicon/icon.png" />
 
-    <!-- Style -->
-    <link rel="stylesheet" href="../css/mail.css">
-    <link rel="stylesheet" href="../css/styles.css">
+  <!-- Lib -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../fonts/fontawesome-all.min.css">
+  <link rel="stylesheet" href="../fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="../fonts/ionicons.min.css">
+  <link rel="stylesheet" href="../fonts/material-icons.min.css">
+  <link rel="stylesheet" href="../fonts/fontawesome5-overrides.min.css">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="../css/mail.css">
+  <link rel="stylesheet" href="../css/styles.css">
 
 </head>
 
 <body>
 
-    <!-- Modal -->
-    <div class="modal fade" id="ModalNovaMensagem" tabindex="-1" role="dialog" aria-labelledby="ModalNovaMensagemLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="TituloModalNovaMensagem">Novo E-mail</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <!-- Modal -->
+  <div class="modal fade" id="ModalNovaMensagem" tabindex="-1" role="dialog" aria-labelledby="ModalNovaMensagemLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalNovaMensagem">Novo E-mail</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                </div>
-                <div class="modal-body">
-                    <div class="inputs">
-                        <div class="form-group">
-                            <input class="form-control" type="email" id="para" name="para" placeholder="Para">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="email" id="cc" name="cc" placeholder="Cc">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" id="assunto" name="assunto" placeholder="Assunto">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" name="mensagem" id="mensagem" placeholder="Mensagem" rows="10"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" id="enviar" class="btn btn-primary">Enviar e-mail</button>
-                </div>
-            </div>
         </div>
+        <div class="modal-body">
+          <div class="inputs">
+            <div class="form-group">
+              <input class="form-control" type="email" id="para" name="para" placeholder="Para">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="email" id="cc" name="cc" placeholder="Cc">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" id="assunto" name="assunto" placeholder="Assunto">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="mensagem" id="mensagem" placeholder="Mensagem" rows="10"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" id="enviar" class="btn btn-primary">Enviar e-mail</button>
+        </div>
+      </div>
     </div>
+  </div>
 
 
-    <nav class="navbar navbar-light navbar-expand-md main-menu">
-        <div class="container-fluid">
-            <button class="menu animated pulse mr-5" id="menu-toggle">
+  <nav class="navbar navbar-light navbar-expand-md main-menu">
+    <div class="container-fluid">
+      <button class="menu animated pulse mr-5" id="menu-toggle">
                 <i class="material-icons">menu</i>
             </button>
-            <input class="search" id="search" type="search" placeholder="Pesquisar" autocomplete="on">
-            <div class="collapse navbar-collapse" id="navcol-1"></div>
-            <a id="sair" class="sair">
-                <i class="fas fa-sign-out-alt"></i>
-            </a>
-        </div>
-    </nav>
-    <div class="container corpo toggled" id="wrapper">
-        <div class="row">
-            <div class="col-2 sidebar overflow-hidden" id="sidebar-wrapper">
-                <div class="sidebar-nova-mensagem">
-                    <button class="nova-mensagem" id="btn-new-email" data-toggle="modal" data-target="#ModalNovaMensagem">+
+      <input class="search" id="search" type="search" placeholder="Pesquisar" autocomplete="on">
+      <div class="collapse navbar-collapse" id="navcol-1"></div>
+      <a id="sair" class="sair">
+        <i class="fas fa-sign-out-alt"></i>
+      </a>
+    </div>
+  </nav>
+  <div class="container corpo toggled" id="wrapper">
+    <div class="row">
+      <div class="col-2 sidebar overflow-hidden" id="sidebar-wrapper">
+        <div class="sidebar-nova-mensagem">
+          <button class="nova-mensagem" id="btn-new-email" data-toggle="modal" data-target="#ModalNovaMensagem">+
                         Nova Mensagem
                     </button>
-                </div>
-                <ul class="list-group">
-                    <button id="favoritos" class="pastas-btn light">
+        </div>
+        <ul class="list-group">
+          <button id="favoritos" class="pastas-btn light">
                         <i class="fa fa-star-o"></i>
                         <span class="pastas">Favoritos</span>
                     </button>
-                    <button id="caixa-entrada" class="pastas-btn strong">
+          <button id="caixa-entrada" class="pastas-btn strong">
                         <i class="fa fa-envelope-o"></i>
                         <span class="pastas">Caixa de Entrada</span>
                     </button>
-                    <button id="lixo" class="pastas-btn light">
+          <button id="lixo" class="pastas-btn light">
                         <i class="fa fa-exclamation-circle"></i>
                         <span class="pastas">Lixo Eletrônico</span>
                     </button>
-                    <button id="rascunho" class="pastas-btn strong">
+          <button id="rascunho" class="pastas-btn strong">
                         <i class="fa fa-pencil-square-o"></i>
                         <span class="pastas">Rascunho</span>
                     </button>
-                    <button id="enviados" class="pastas-btn light">
+          <button id="enviados" class="pastas-btn light">
                         <i class="fa fa-paper-plane-o"></i>
                         <span class="pastas">Itens Enviados</span>
                     </button>
-                    <button id="excluidos" class="pastas-btn strong">
+          <button id="excluidos" class="pastas-btn strong">
                         <i class="fa fa-trash-o"></i>
                         <span class="pastas">Itens Excluidos</span>
                     </button>
-                    <button id="morto" class="pastas-btn light">
+          <button id="morto" class="pastas-btn light">
                         <i class="fa fa-archive"></i>
                         <span class="pastas">Arquivo Morto</span>
                     </button>
-                </ul>
-            </div>
-            <div class="col-10 emails" id="page-content-wrapper">
-                <div class="title">
-                    <h4 id="caixa">Caixa de Entrada</h4>
-                </div>
-                <ul class="list-group" id="inbox">
-                    <!-- <li class="d-flex justify-content-center"><br><br>Você não possui nenhum e-mail recebido :(</li> -->
-                </ul>
-            </div>
+        </ul>
+      </div>
+      <div class="col-10 emails" id="page-content-wrapper">
+        <div class="title">
+          <h4 id="caixa">Caixa de Entrada</h4>
         </div>
+        <ul class="list-group" id="inbox">
+          <!-- <li class="d-flex justify-content-center"><br><br>Você não possui nenhum e-mail recebido :(</li> -->
+        </ul>
+      </div>
     </div>
+  </div>
 
 
-    <!-- Lib -->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
+  <!-- Lib -->
+  <script src="../js/jquery.min.js"></script>
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Scripts -->
-    <script src="../js/mail.js"></script>
+  <!-- Scripts -->
+  <script src="../js/mail.js"></script>
 
 </body>
 
