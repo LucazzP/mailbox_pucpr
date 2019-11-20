@@ -12,6 +12,7 @@
    $dom->load("../xml/emails.xml");
    #retirar os espacos em branco
    $dom->preserveWhiteSpace = false;
+   $dom->formatOutput = true;
 
    $root = $dom->getElementsByTagName("tabelaEmails")-> item(0);
 

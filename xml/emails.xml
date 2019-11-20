@@ -1,26 +1,59 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <tabelaEmails>
-  <email id="1">
-    <de>luquinhaspolazito@gmail.com.br</de>
-    <para>renanteste@gmail.com.br</para>
-    <cc>renancc@gmail.com.br</cc>
-    <assunto>testerenan</assunto>
-    <texto> assunto bla blah blahbanbenasiubnranbrfndaobif</texto>
-  </email>
-  <email id="2">
-    <de>luquinhaspolazito@gmail.com.br</de>
-    <para>renanteste@gmail.com.br</para>
-    <cc>renancc@gmail.com.br</cc>
-    <assunto>testerenan</assunto>
-    <texto> testesteste</texto>
-  </email>
-  <email id="3">
-    <de>renizoo@gmail.com.br</de>
-    <para>renizoo@gmail.com</para>
-    <cc>rena@gmail.com.br</cc>
-    <assunto>testerenan</assunto>
-    <texto> ha</texto>
-  </email>
-<email id="4"><de>renizoo@gmail.com</de><para>renizoo@gmail.com</para><cc>lucas@gmail.com</cc><assunto>Oiii</assunto><texto>Tudo bemmmasldhaiudhuhas</texto></email>
-<email id="5"><de>pedro@gmail.com</de><para>pedro@gmail.com</para><cc/><assunto>Pedro</assunto><texto>pedro</texto></email>
-<email id="6"><de>renizoo@gmail.com</de><para>renizoo@gmail.com</para><cc/><assunto>lala</assunto><texto>laspdokasodas</texto></email><email id="7"><de>renizoo@gmail.com</de><para>renizoo@gmail.com</para><cc/><assunto>asdadsdd</assunto><texto>asdasd</texto></email></tabelaEmails>
+	<email id="1">
+		<de>luquinhaspolazito@gmail.com.br</de>
+		<para>renanteste@gmail.com.br</para>
+		<cc>renancc@gmail.com.br</cc>
+		<assunto>testerenan</assunto>
+		<texto> assunto bla blah blahbanbenasiubnranbrfndaobif</texto>
+	</email>
+	<email id="2">
+		<de>luquinhaspolazito@gmail.com.br</de>
+		<para>renanteste@gmail.com.br</para>
+		<cc>renancc@gmail.com.br</cc>
+		<assunto>testerenan</assunto>
+		<texto> testesteste</texto>
+	</email>
+	<email id="3">
+		<de>renizoo@gmail.com.br</de>
+		<para>renizoo@gmail.com</para>
+		<cc>rena@gmail.com.br</cc>
+		<assunto>testerenan</assunto>
+		<texto> ha</texto>
+	</email>
+	<email id="4">
+		<de>renizoo@gmail.com</de>
+		<para>renizoo@gmail.com</para>
+		<cc>lucas@gmail.com</cc>
+		<assunto>Oiii</assunto>
+		<texto>Tudo bemmmasldhaiudhuhas</texto>
+	</email>
+	<email id="5">
+		<de>pedro@gmail.com</de>
+		<para>pedro@gmail.com</para>
+		<cc/>
+		<assunto>Pedro</assunto>
+		<texto>pedro</texto>
+	</email>
+	<email id="6">
+		<de>renizoo@gmail.com</de>
+		<para>renizoo@gmail.com</para>
+		<cc/>
+		<assunto>lala</assunto>
+		<texto>laspdokasodas</texto>
+	</email>
+	<email id="7">
+		<de>renizoo@gmail.com</de>
+		<para>renizoo@gmail.com</para>
+		<cc/>
+		<assunto>asdadsdd</assunto>
+		<texto>asdasd</texto>
+	</email>
+	<email id="8">
+		<de>renizoo@gmail.com</de>
+		<para>wiuthruht@suifghdfoiu.com</para>
+		<cc>slijdgfuoshu</cc>
+		<assunto>olidfjgjd</assunto>
+		<texto>nmsdfoigjdf</texto>
+	</email>
+</tabelaEmails>
