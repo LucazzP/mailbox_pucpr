@@ -112,15 +112,14 @@ function draftEmail(para, cc, assunto, mensagem) {
     });
 }
 
-function searchMail(txt) {
+function searchMail(texto) {
     $.ajax({
-        url: '/php/search.php',
-        method: 'POST',
-        data: { search: txt },
-        dataType: 'text',
-        success: function(data) {
-
+        url: "/php/search.php",
+        data: {
+            search: texto,
         },
+        type: "POST",
+        dataType: "json",
         success: function(resposta) {
             $("#inbox").html("");
             if (resposta[0].erro) {
@@ -135,12 +134,11 @@ function searchMail(txt) {
                     itens += "<span class='assunto text-nowrap'>" + 'Assunto: ' + response['assunto'] + "</span>";
                     itens += "<span class='preview text-nowrap text-truncate'>" + response['texto'] + "</span>";
                     itens += "<div class='flex-fill'></div>";
-                    if (request != "favoritos" && request != "excluidos") itens += "<button type='button' onclick='favoriteEmail(" + response['@attributes']['id'] + ")' class='trash'>";
-                    if (request != "favoritos" && request != "excluidos") itens += "<i class='fa fa-star'></i>";
-                    if (request != "favoritos" && request != "excluidos") itens += "</button>";
-                    if (request != "excluidos") itens += "<button type='button' onclick='excludeEmail(" + response['@attributes']['id'] + ")' class='trash'>";
-                    if (request != "excluidos") itens += "<i class='fas fa-trash-alt'></i>";
-                    if (request != "excluidos") itens += "</button>";
+                    itens += "<button type='button' onclick='favoriteEmail(" + response['@attributes']['id'] + ")' class='trash'>";
+                    itens += "<i class='fa fa-star'></i>";
+                    itens += "</button>";
+                    itens += "<button type='button' onclick='excludeEmail(" + response['@attributes']['id'] + ")' class='trash'>";
+                    itens += "<i class='fas fa-trash-alt'></i>";
                     itens += "</li>";
                 }
                 $("#inbox").html(itens);
@@ -149,17 +147,16 @@ function searchMail(txt) {
         error: function(xhr, ajaxOptions, thrownError) {
             alert("Algo de errado com o xml.");
         }
-
-    })
+    });
 }
 
 $(document).ready(function() {
     loadEmails();
     $("#search").keyup(function() {
         var text = $(this).val();
-        if (text = !'') {
+        if (text != '') {
             searchMail(text);
-        }
+        } else loadEmails();
     })
 
     $("#sair").click(function(e) {
