@@ -188,7 +188,7 @@ $(document).ready(function() {
         var assunto = $("#assunto").val();
         var mensagem = $("#mensagem").val();
         $.post(
-            "http://" + window.location.host + "/php/mail.php", {
+            window.location.origin + window.location.pathname.replace("/mail/", "/php/mail.php"), {
                 para: para,
                 cc: cc,
                 assunto: assunto,
