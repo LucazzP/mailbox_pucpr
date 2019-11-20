@@ -35,39 +35,38 @@
         <div class="modal-header">
           <h5 class="modal-title" id="TituloModalNovaMensagem">Novo E-mail</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <div class="modal-body">
           <div class="inputs">
             <div class="form-group">
-              <input class="form-control" type="email" id="para" name="para" placeholder="Para">
+              <input class="campo form-control" type="email" id="para" name="para" placeholder="Para" autocomplete="on">
             </div>
             <div class="form-group">
-              <input class="form-control" type="email" id="cc" name="cc" placeholder="Cc">
+              <input class="campo form-control" type="email" id="cc" name="cc" placeholder="Cc" autocomplete="on">
             </div>
             <div class="form-group">
-              <input class="form-control" type="text" id="assunto" name="assunto" placeholder="Assunto">
+              <input class="campo form-control" type="text" id="assunto" name="assunto" placeholder="Assunto">
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="mensagem" id="mensagem" placeholder="Mensagem" rows="10"></textarea>
+              <textarea class="campo form-control" name="mensagem" id="mensagem" placeholder="Mensagem" rows="10"></textarea>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" id="enviar" class="btn btn-primary">Enviar e-mail</button>
+          <button type="button" class="cancelar btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" id="enviar" class="enviar btn btn-primary"><i class="fas fa-paper-plane"></i>Enviar e-mail</i></button>
         </div>
       </div>
     </div>
   </div>
 
-
   <nav class="navbar navbar-light navbar-expand-md main-menu">
     <div class="container-fluid">
       <button class="menu animated pulse mr-5" id="menu-toggle">
-                <i class="material-icons">menu</i>
-            </button>
+        <i class="material-icons">menu</i>
+      </button>
       <input class="search" id="search" type="search" placeholder="Pesquisar" autocomplete="on">
       <div class="collapse navbar-collapse" id="navcol-1"></div>
       <a id="sair" class="sair">
@@ -80,51 +79,47 @@
       <div class="col-2 sidebar overflow-hidden" id="sidebar-wrapper">
         <div class="sidebar-nova-mensagem">
           <button class="nova-mensagem" id="btn-new-email" data-toggle="modal" data-target="#ModalNovaMensagem">+
-                        Nova Mensagem
-                    </button>
+            Nova Mensagem
+          </button>
         </div>
         <ul class="list-group">
           <button id="favoritos" class="pastas-btn light">
-                        <i class="fa fa-star-o"></i>
-                        <span class="pastas">Favoritos</span>
-                    </button>
+            <i class="fa fa-star-o"></i>
+            <span class="pastas">Favoritos</span>
+          </button>
           <button id="caixa-entrada" class="pastas-btn strong">
-                        <i class="fa fa-envelope-o"></i>
-                        <span class="pastas">Caixa de Entrada</span>
-                    </button>
+            <i class="fa fa-envelope-o"></i>
+            <span class="pastas">Caixa de Entrada</span>
+          </button>
           <button id="lixo" class="pastas-btn light">
-                        <i class="fa fa-exclamation-circle"></i>
-                        <span class="pastas">Lixo Eletrônico</span>
-                    </button>
+            <i class="fa fa-exclamation-circle"></i>
+            <span class="pastas">Lixo Eletrônico</span>
+          </button>
           <button id="rascunho" class="pastas-btn strong">
-                        <i class="fa fa-pencil-square-o"></i>
-                        <span class="pastas">Rascunho</span>
-                    </button>
+            <i class="fa fa-pencil-square-o"></i>
+            <span class="pastas">Rascunho</span>
+          </button>
           <button id="enviados" class="pastas-btn light">
-                        <i class="fa fa-paper-plane-o"></i>
-                        <span class="pastas">Itens Enviados</span>
-                    </button>
+            <i class="fa fa-paper-plane-o"></i>
+            <span class="pastas">Itens Enviados</span>
+          </button>
           <button id="excluidos" class="pastas-btn strong">
-                        <i class="fa fa-trash-o"></i>
-                        <span class="pastas">Itens Excluidos</span>
-                    </button>
+            <i class="fa fa-trash-o"></i>
+            <span class="pastas">Itens Excluidos</span>
+          </button>
           <button id="morto" class="pastas-btn light">
-                        <i class="fa fa-archive"></i>
-                        <span class="pastas">Arquivo Morto</span>
-                    </button>
+            <i class="fa fa-archive"></i>
+            <span class="pastas">Arquivo Morto</span>
+          </button>
         </ul>
       </div>
       <div class="col-10 emails" id="page-content-wrapper">
         <div class="title">
           <h4 id="caixa">Caixa de Entrada</h4>
         </div>
-        <ul class="list-group" id="inbox">
-          <!-- <li class="d-flex justify-content-center"><br><br>Você não possui nenhum e-mail recebido :(</li> -->
-        </ul>
       </div>
     </div>
   </div>
-
 
   <!-- Lib -->
   <script src="../js/jquery.min.js"></script>
