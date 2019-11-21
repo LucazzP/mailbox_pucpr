@@ -21,39 +21,6 @@
 		<assunto>testerenan</assunto>
 		<texto> ha</texto>
 	</email>
-	<email id="4">
-		<de>renizoo@gmail.com</de>
-		<para>renizoo@gmail.com</para>
-		<cc>lucas@gmail.com</cc>
-		<assunto>Oiii</assunto>
-		<texto>Tudo bemmmasldhaiudhuhas</texto>
-	</email>
-	<email id="5">
-		<de>pedro@gmail.com</de>
-		<para>pedro@gmail.com</para>
-		<cc/>
-		<assunto>Pedro</assunto>
-		<texto>pedro</texto>
-	</email>
-	<email id="6">
-		<de>renizoo@gmail.com</de>
-		<para>renizoo@gmail.com</para>
-		<cc/>
-		<assunto>lala</assunto>
-		<texto>laspdokasodas</texto>
-	</email>
-	<email id="7">
-		<de>renizoo@gmail.com</de>
-		<para>renizoo@gmail.com</para>
-		<cc/>
-		<assunto>asdadsdd</assunto>
-		<texto>asdasd</texto>
-	</email>
-	<email id="8">
-		<de>renizoo@gmail.com</de>
-		<para>wiuthruht@suifghdfoiu.com</para>
-		<cc>slijdgfuoshu</cc>
-		<assunto>olidfjgjd</assunto>
-		<texto>nmsdfoigjdf</texto>
-	</email>
-</tabelaEmails>
+	<email id="4"><de>renizoo@gmail.com</de><para>renizoo@gmail.com</para><cc>lucas@gmail.com</cc><assunto>Oiii</assunto><texto>Tudo bemmmasldhaiudhuhas</texto></email>
+<email id="5"><de>pedro@gmail.com</de><para>pedro@gmail.com</para><cc/><assunto>Pedro</assunto><texto>pedro</texto></email>
+<email id="6"><de>renizoo@gmail.com</de><para>renizoo@gmail.com</para><cc/><assunto>lala</assunto><texto>laspdokasodas</texto></email><email id="7"><de>renizoo@gmail.com</de><para>renizoo@gmail.com</para><cc/><assunto>asdadsdd</assunto><texto>asdasd</texto></email><email id="8"><de>renizoo@gmail.com</de><para>1111111</para><cc>11111111</cc><assunto>111111111</assunto><texto>1111111111111111111111</texto></email><email id="9"><de>renizoo@gmail.com</de><para>sdfuhsduih</para><cc>ksdfhgud</cc><assunto>jkdfju</assunto><texto>ngfhfd</texto></email></tabelaEmails>
