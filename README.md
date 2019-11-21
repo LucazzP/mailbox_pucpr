@@ -12,8 +12,8 @@
 Contribuidores
 =============
 
-Lucas Henrique Polazzo
-Pedro Henrique Lucho
-Renan Maciel Antunes
+Lucas Henrique Polazzo,
+Pedro Henrique Lucho,
+Renan Maciel Antunes.
 -------------
 
